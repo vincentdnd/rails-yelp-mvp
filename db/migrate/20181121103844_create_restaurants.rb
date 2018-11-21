@@ -1,7 +1,4 @@
 class CreateRestaurants < ActiveRecord::Migration[5.2]
-  validates :name, presence: true
-  validates :adress, presence: true
-  validates :category, presence: true, inclusion: { in: ["chinese", "italian", "japanese", "french", "belgian"]}
   def change
     create_table :restaurants do |t|
       t.string :name

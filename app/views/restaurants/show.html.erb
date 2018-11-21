@@ -1,0 +1,16 @@
+<h1><%= @restaurant.name %></h1>
+<ul class="list-inline">
+  <li>Category: <%= @restaurant.category %></li>
+  <li>Address: <%= @restaurant.address %></li>
+</ul>
+<ul id="commentList" style="list-style: none">
+  Comments & Rating (from our beloved users :)
+      <% @restaurant.reviews.each do |review| %>
+      <li><%= review.content %> | <%= review.rating  %></li>
+      <!-- <li><%= review.rating %></li> -->
+      <% end  %>
+      <li><%= link_to "Add Comment",  new_restaurant_review_path(@restaurant) %></li>
+</ul>
+
+
+<%= link_to "Back to main menu", restaurants_path %>
